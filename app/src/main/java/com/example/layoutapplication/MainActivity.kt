@@ -46,25 +46,18 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
-        binding.btnClean.setOnClickListener {
-            println("Roque1 " + binding.tieTotal.text)
-            println("Roque1 " + binding.tieNumPeople.text)
-
-        }
         binding.btnDone.setOnClickListener {
             val totalTableTemp = binding.tieTotal.text
-            val nPeopleTemp = binding.tieNumPeople.text
 
-            if (totalTableTemp?.isEmpty() == true ||
-                nPeopleTemp?.isEmpty() == true
+
+            if (totalTableTemp?.isEmpty() == true
             ) {
                 Snackbar.make(binding.tieTotal, "Please complete all fields", Snackbar.LENGTH_LONG)
                     .show()
             } else {
 
                 val totalTable: Float = totalTableTemp.toString().toFloat()
-                val nPeople: Int = nPeopleTemp.toString().toInt()
+                val nPeople: Int = 5
 
                 val totaltTemp = totalTable / nPeople
                 val tips = totaltTemp * percentage / 100
@@ -78,7 +71,6 @@ class MainActivity : AppCompatActivity() {
         binding.btnClean.setOnClickListener {
             binding.tvResult.text = ""
             binding.tieTotal.setText("")
-            binding.tieNumPeople.setText("")
             binding.rbOptionThree.isChecked = false
             binding.rbOptionOne.isChecked = false
             binding.rbOptionTwo.isChecked = false
