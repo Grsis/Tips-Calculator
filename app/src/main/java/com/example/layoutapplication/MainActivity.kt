@@ -1,5 +1,6 @@
 package com.example.layoutapplication
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.layoutapplication.databinding.ActivityMainBinding
@@ -24,57 +25,53 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var percentage: Int = 0
-        binding.rbOptionOne.setOnCheckedChangeListener { _, isChecked ->
-            println("Roque1 Option one:$isChecked")
-            if (isChecked) {
-                percentage = 10
-            }
-        }
-
-        binding.rbOptionTwo.setOnCheckedChangeListener { _, isChecked ->
-            println("Roque1 Option two:$isChecked")
-            if (isChecked) {
-                percentage = 15
-            }
-        }
-
-        binding.rbOptionThree.setOnCheckedChangeListener { _, isChecked ->
-            println("Roque1 Option three:$isChecked")
-            if (isChecked) {
-                percentage = 20
-            }
-        }
-
         binding.btnDone.setOnClickListener {
             val totalTableTemp = binding.tieTotal.text
+            val numbPeopleTemp = binding.tieNumPeople.text
+            val percentageTemp = binding.tiePercentage.text
 
 
-            if (totalTableTemp?.isEmpty() == true
+            if (totalTableTemp?.isEmpty() == true ||
+                numbPeopleTemp?.isEmpty() == true  ||
+                percentageTemp?.isEmpty() == true
+
             ) {
-                Snackbar.make(binding.tieTotal, "Please complete all fields", Snackbar.LENGTH_LONG)
+                Snackbar
+                    .make(binding.tieTotal, "Please complete all fields", Snackbar.LENGTH_LONG)
                     .show()
             } else {
 
                 val totalTable: Float = totalTableTemp.toString().toFloat()
-                val nPeople: Int = 5
+                val nPeople: Int = numbPeopleTemp.toString().toInt()
+                val percentage:Int =percentageTemp.toString().toInt()
 
                 val totaltTemp = totalTable / nPeople
-                val tips = totaltTemp * percentage / 100
+                val tips = totaltTemp * percentage/ 100
                 val totalWithTips = totaltTemp + tips
-                binding.tvResult.text = "Total with tips: $totalWithTips"
+                val intent = Intent(this, SummaryActivity:: class.java)
+                intent.apply {
+                    putExtra("totalTable", totalTable)
+                    putExtra("numPeople", nPeople)
+                    putExtra("percentage", percentage )
+                    putExtra("totalAmount", totalWithTips)
+                }
+                clean()
+                startActivity(intent)
             }
 
 
         }
 
         binding.btnClean.setOnClickListener {
-            binding.tvResult.text = ""
-            binding.tieTotal.setText("")
-            binding.rbOptionThree.isChecked = false
-            binding.rbOptionOne.isChecked = false
-            binding.rbOptionTwo.isChecked = false
+        clean()
+
         }
+    }
+    private fun clean(){
+        binding.tieTotal.setText("")
+        binding.tiePercentage.setText("")
+        binding.tieNumPeople.setText("")
+
     }
 
 }
