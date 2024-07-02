@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tips_calculator">Calculadora de Grojeta</string>
+    <string name="summary_subtitle">Preencha todos os campos para calcular a sua conta</string>
+    <string name="table_amount_label">Insira o valor da conta:</string>
+    <string name="number_of_people">Num de pessoas:</string>
+    <string name="tips_percentage">Percentagem:</string>
+    <string name="clean">Limpar</string>
+    <string name="calculate">Calcular</string>
+    <string name="check_your_bill">Veja a sua conta:</string>
+    <string name="total_table">Total da mesa: </string>
+    <string name="total">Total</string>
+    <string name="done">Feito</string>
+    <string name="table_amount_hint">€ 250.00</string>
+</resources>

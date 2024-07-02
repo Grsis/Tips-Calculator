@@ -1,16 +1,15 @@
 <resources>
-    <string name="app_name" translatable="false">LayoutApplication</string>
-    <string-array name="num_people">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-    </string-array>
+    <string name="tips_calculator">Tips Calculator</string>
+    <string name="summary_subtitle">Fill in all the fields to calculate your bill</string>
+    <string name="table_amount_label">Type the table amount:</string>
+    <string name="number_of_people">Num of people:</string>
+    <string name="tips_percentage">Tips percentage:</string>
+    <string name="clean">Clean</string>
+    <string name="calculate">Calculate</string>
+    <string name="check_your_bill">Check your bill:</string>
+    <string name="total_table">Total table:</string>
+    <string name="total">Total</string>
+    <string name="done">Done</string>
+    <string name="table_amount_hint">$ 250.00</string>
+
 </resources>
