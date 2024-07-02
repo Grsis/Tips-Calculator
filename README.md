@@ -4,6 +4,10 @@ This project is a native Android application developed with the Kotlin programmi
 ## :camera_flash: Screenshots
 <img src ="https://github.com/Grsis/Tips-Calculator/assets/73494592/76449e90-93de-4875-b1ae-e151115651c4" width=260 /> <img src ="https://github.com/Grsis/Tips-Calculator/assets/73494592/af9155f6-c9e1-4f44-b561-625aee7bd904" width=260 />
 
+Update:
+<img scr ="https://github.com/Grsis/Tips-Calculator/assets/73494592/2cfda220-1705-4c27-8202-bf5f2be6a104" width=260/> <img src ="https://github.com/Grsis/Tips-Calculator/assets/73494592/965a03ee-5244-430c-a3cd-f5d8ce7bd7c7" />
+
+
 ## Features
 - TextView
 - Button
@@ -13,6 +17,8 @@ This project is a native Android application developed with the Kotlin programmi
 - Binding
 - SnackBar
 - Spinner
+- TextInputEditText
+- TextInputLayout
  
 
 
